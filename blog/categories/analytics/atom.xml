@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Analytics | present tense]]></title>
+  <link href="http://philipkobernik.github.io/blog/categories/analytics/atom.xml" rel="self"/>
+  <link href="http://philipkobernik.github.io/"/>
+  <updated>2013-12-05T16:04:04-08:00</updated>
+  <id>http://philipkobernik.github.io/</id>
+  <author>
+    <name><![CDATA[Philip Kobernik]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Plotting comparative time series with JqPlot]]></title>
+    <link href="http://philipkobernik.github.io/blog/2013/11/25/plotting-comparative-time-series-with-jqplot/"/>
+    <updated>2013-11-25T15:26:48-08:00</updated>
+    <id>http://philipkobernik.github.io/blog/2013/11/25/plotting-comparative-time-series-with-jqplot</id>
+    <content type="html"><![CDATA[<h2>JqPlot takes some effort</h2>
+
+<p>I was compelled to use JqPlot for a work project.</p>
+
+<p>My first advice would be this: Run. JqPlot is tough to learn and not fun to play with. You will find yourself eternally knee deep in a hash of configuration options. It is canvas based and does not render nicely on retina displays.</p>
+
+<p>If you are still reading, so be it. May this blog post spare you some pain.</p>
+
+<h2>Stacking two disparate time ranges</h2>
+
+<p>Your starting point looks like <a href="http://jsfiddle.net/ptk921/R92tG/1/">this</a>. You have two time-series that are being rendered with the DateAxisRenderer.</p>
+
+<p>The core of the solution is to specify two x-axes so that the
+time series can be &lsquo;stacked&rsquo; on on top the other for
+comparison.</p>
+
+<p>Two changes to the configuration must be made:
+ * change the axes configuration to define a 2nd x-axis called x2axis
+ * change the series configuration to specify that one of the data
+   series should use the new &lsquo;x2axis&rsquo; as its xaxis.</p>
+
+<p>``` javascript
+var plot1 = $.jqplot(&lsquo;chart1&rsquo;, [line1,line2], {
+  title: &lsquo;XYZ, Inc.&rsquo;,
+  series: [{</p>
+
+<pre><code>label: 'primary series', 
+neighborThreshold: -1,
+xaxis: 'xaxis'
+</code></pre>
+
+<p>  }, {</p>
+
+<pre><code>label: 'comparative series',
+xaxis: 'x2axis'
+</code></pre>
+
+<p>  }],
+  axes: {</p>
+
+<pre><code>xaxis: { 
+  renderer:$.jqplot.DateAxisRenderer,
+  tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+  tickOptions: {
+    angle: -30
+  } 
+},
+x2axis: {
+  renderer:$.jqplot.DateAxisRenderer,
+  tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+  tickOptions: {
+    angle: -30
+  } 
+},
+yaxis: {  
+  renderer: $.jqplot.LogAxisRenderer,
+  tickOptions:{ prefix: '$' } 
+} 
+</code></pre>
+
+<p>  }
+});</p>
+
+<p>```</p>
+
+<p>This gives us what we&rsquo;re looking for, <a href="http://jsfiddle.net/ptk921/R92tG/4/">two stacked time series</a>.</p>
+
+<h2>More <del>problems</del> opportunities</h2>
+
+<p>The above case is rather ideal, and actually makes JqPlot look pretty
+good. What happens when your time series have different lengths?</p>
+
+<p>If your time series have different lengths, the two x-axes will have
+different ranges, and tick intervals and vertical gridlines wil not
+match up. In short, the stacked effect will be destroyed.</p>
+
+<p>In <a href="http://jsfiddle.net/R92tG/5/">this example</a>, I have destroyed the
+stacked effect by adding two data points to the data series &lsquo;line1&rsquo;&mdash;
+one point on the front, and one on the end.</p>
+
+<p>There are many reasons why your data series have unequal lengths like
+this. In my case, comparing months of data by day resulted in data series
+with different lengths due to months having uneven numbers of days. Silly months.</p>
+
+<p>In any case, the best solution for his kind of problem is to explicitly
+define the x-axes' chart range parameters via the JqPlot &lsquo;min&rsquo; and &lsquo;max&rsquo;
+options.</p>
+
+<p>``` javascript
+axes: {
+  xaxis: {</p>
+
+<pre><code>renderer:$.jqplot.DateAxisRenderer,
+tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+tickOptions: {
+  angle: -30
+},
+min: "6/22/2009 09:00",
+max: "6/22/2009 22:00"
+</code></pre>
+
+<p>  },
+  x2axis: {</p>
+
+<pre><code>renderer:$.jqplot.DateAxisRenderer,
+tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+tickOptions: {
+  angle: -30
+},
+min: "6/23/2009 09:00",
+max: "6/23/2009 22:00"
+</code></pre>
+
+<p>  },
+  yaxis: {</p>
+
+<pre><code>renderer: $.jqplot.LogAxisRenderer,
+tickOptions:{ prefix: '$' } 
+</code></pre>
+
+<p>  }
+},
+```</p>
+
+<p><a href="http://jsfiddle.net/R92tG/6/">Example showing min/max solution here</a>.</p>
+
+<h2>Use tickInterval</h2>
+
+<p>One handy discovery in my JqPlot adventure was the &lsquo;tickInterval&rsquo;
+option. With the x-axes' min and max options set, one can utilize</p>
+
+<pre><code>tickInterval: '1 (day|week|month)'
+</code></pre>
+
+<p>to quickly and easily modify the rendering of tick marks. Thanks JqPlot.</p>
+
+<h2>Did this help?</h2>
+
+<p>Feel free to upvote my <a href="http://stackoverflow.com/a/20227772/1128839">stackoverflow answer</a> if this post helped you out.</p>
+]]></content>
+  </entry>
+  
+</feed>

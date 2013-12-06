@@ -1,88 +1,23 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>present tense</title>
-  <meta name="author" content="Philip Kobernik">
-
-  
-  <meta name="description" content="JqPlot takes some effort I was compelled to use JqPlot for a work project. My first advice would be this: Run. JqPlot is tough to learn and not fun &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://philipkobernik.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="present tense" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <img src="/images/penguin.png" />
-  <h1><a href="/">present tense</a></h1>
-</hgroup>
-
-</header>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[present tense]]></title>
+  <link href="http://philipkobernik.github.io/atom.xml" rel="self"/>
+  <link href="http://philipkobernik.github.io/"/>
+  <updated>2013-12-05T16:04:04-08:00</updated>
+  <id>http://philipkobernik.github.io/</id>
+  <author>
+    <name><![CDATA[Philip Kobernik]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/11/25/plotting-comparative-time-series-with-jqplot/">Plotting Comparative Time Series With JqPlot</a></h1>
-    
-  </header>
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-25T15:26:48-08:00" pubdate data-updated="true">Nov 25<span>th</span>, 2013</time>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/analytics/'>Analytics</a>, <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/jqplot/'>JqPlot</a>
-  
-</span>
-
-
-  <div class="entry-content"><h2>JqPlot takes some effort</h2>
+  <entry>
+    <title type="html"><![CDATA[Plotting comparative time series with JqPlot]]></title>
+    <link href="http://philipkobernik.github.io/blog/2013/11/25/plotting-comparative-time-series-with-jqplot/"/>
+    <updated>2013-11-25T15:26:48-08:00</updated>
+    <id>http://philipkobernik.github.io/blog/2013/11/25/plotting-comparative-time-series-with-jqplot</id>
+    <content type="html"><![CDATA[<h2>JqPlot takes some effort</h2>
 
 <p>I was compelled to use JqPlot for a work project.</p>
 
@@ -257,88 +192,7 @@ option. With the x-axes&#8217; min and max options set, one can utilize</p>
 <h2>Did this help?</h2>
 
 <p>Feel free to upvote my <a href="http://stackoverflow.com/a/20227772/1128839">stackoverflow answer</a> if this post helped you out.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <form action="http://google.com/search" method="get">
-      <fieldset role="search">
-        <input type="hidden" name="q" value="site:philipkobernik.github.io" />
-        <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-      </fieldset>
-    </form>
-  
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/11/25/plotting-comparative-time-series-with-jqplot/">Plotting comparative time series with JqPlot</a>
-      </li>
-    
-  </ul>
-</section>
-<section>
-  <h1>About Me</h1>
-  <p>Making things of purpose. Hacker, musician, enquirer, Cascadian.</p>
-  <ul>
-    <li>
-      <a href="https://twitter.com/philipothy">philipothy</a> on Twitter
-    </li>
-
-    <li>
-      <a href="https://github.com/philipkobernik">philipkobernik</a> on GitHub
-    </li>
-  </ul>
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Philip Kobernik -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="/javascripts/aharris.js"></script>
-
-</body>
-</html>
+</feed>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>
+            http://philipkobernik.github.io/blog/2013/11/25/plotting-comparative-time-series-with-jqplot/
+        </loc>
+        <lastmod>2013-12-05T16:02:37-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://philipkobernik.github.io/blog/archives/</loc>
+        <lastmod>2013-12-05T16:02:37-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://philipkobernik.github.io/</loc>
+        <lastmod>2013-12-05T16:02:37-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://philipkobernik.github.io/robots.txt</loc>
+        <lastmod>2013-12-04T12:20:59-08:00</lastmod>
+    </url>
+</urlset>
